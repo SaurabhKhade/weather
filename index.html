@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+	<title>Weather</title>
+</head>
+<body>
+	<div class="bgimg"></div>
+	<div class="searchbox">
+		<input type="search" id="search" placeholder="Search Custom city" />
+		<button class="btn">Check</button>
+	</div>
+	<div class="weatherbox">
+		<div class="city">
+			<h1></h1>
+		</div>
+		<div class="coord">
+			<p id="lon"></p>
+			<p id="lat"></p>
+		</div>
+		<div class="mainbox">
+			<div class="weather">
+				<h1 id="main"></h1>
+			</div>
+			<div class="icon">
+				<img src="" id="icon" />
+			</div>
+		</div>
+		<div class="weatherExtra">
+			<div class="temp">
+				<p id="temp"></p>
+			</div>
+			<div class="pressure">
+				<p id="pressure"></p>
+			</div>
+			<div class="humidity">
+				<p id="humidity"></p>
+			</div>
+			<div class="windspeed">
+				<p id="wind"></p>
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="logic.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+	</script>
+</body>
+</html>
