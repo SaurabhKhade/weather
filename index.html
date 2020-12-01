@@ -5,12 +5,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+	<link rel="shortcut icon" href="images/favicon.jpeg" type="image/x-icon" />
 	<title>Weather</title>
 </head>
 <body>
+	<div class="notification">
+		<p>Entered city not found!</p>
+	</div>
+	<div class="preloader">
+		<h1>Fetching...</h1>
+	</div>
 	<div class="bgimg"></div>
 	<div class="searchbox">
-		<input type="search" id="search" placeholder="Search Custom city" />
+		<input type="text" id="search" placeholder="Search Custom city" />
 		<button class="btn">Check</button>
 	</div>
 	<div class="weatherbox">

@@ -4,20 +4,23 @@ $(function() {
 	} else {
 		alert("Geolocation is not supported by this browser.");
 	}
+	
 	function showPosition(position) {
 		var tocall = `lat=${position.coords.latitude}&lon=${position.coords.longitude}`;
 		apicall(tocall);
 	}
+	
 	function apicall(tocall) {
 		$.ajax({
 			url: `https://api.openweathermap.org/data/2.5/weather?${tocall}&appid=94900283e0940af78b9a67b1af5180f1&units=metric`,
 			success: function(result) {
 				updater(result);
 			}
-		}).fail(function(){
-			alert('Entered city not found!\nPlease try with another city');
+		}).fail(function() {
+			notify('<p>Entered city not found!</p><p>Please try with another city</p>');
 		});
 	}
+	
 	function updater(result) {
 		$('.city h1').text(result.name);
 		$('#main').text(result.weather[0].main);
@@ -48,12 +51,25 @@ $(function() {
 			image = './images/else.jpg';
 		}
 		$('.bgimg').css('background-image', `url(${image})`);
+		notify(`current weather reports of ${result.name}`);
 	}
+
 	$('.btn').click(function() {
 		var tocall = `q=${$('#search').val()}`;
 		apicall(tocall);
 	});
-	$('#search').on('search', function() {
-		$('.btn').click();
-	});
+
+	setTimeout(function() {
+		$('.preloader').css('display', 'none');
+		notify('This is weather conditions of your city (or of your nearby city)');
+	}, 800);
+
+	function notify(message) {
+		$('.notification').html(`<p>${message}</p>`).slideDown(300);
+		setTimeout(closeNotification, 4000);
+	}
+
+	function closeNotification() {
+		$('.notification').slideUp(300);
+	}
 });

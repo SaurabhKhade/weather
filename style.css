@@ -100,3 +100,27 @@ body{
 	font-weight: bold;
 	font-size: 0.9rem;
 }
+
+.preloader{
+	position: fixed;
+	z-index: 50;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #000;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.notification{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 10px;
+	display: none;
+	background-color: rgb(89,212,116);
+}
